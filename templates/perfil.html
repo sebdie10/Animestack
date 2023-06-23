@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/stilos.css' ) }}">
+</head>
+<body>
+    {% extends './plantilla.html'%}
+
+{% block contenido %}
+<div name="contenido">
+    <div name="vistos">
+        <h1>Animes vistos</h1>
+        <hr style="color: #0b77eb;" />
+        <div class="contenido">
+            {% for clave in animes %}
+              <div class="animes">
+              {% for valor in animes[clave] %}
+                {% if valor == 'imagen'%}
+                <div id="playback">
+                <center><a href="/ba?animes={{clave}}"><img src="{{animes[clave][valor]}}" alt=""></a></center>
+                {% endif %}
+                {% if valor == 'nombre' %}
+                <form action="/ba" method="get">
+                  <center> 
+                  <a href="/ba?anime={{clave}}">
+                    <h3>{{animes[clave][valor]}}</h3>
+                  </a></center>
+                </form>
+                
+                </div>
+                {% endif %}
+              {% endfor %}
+              </div>
+            {% endfor %}
+           </div>
+    </div>
+</div>
+
+{% endblock %}
+</body>
+</html>

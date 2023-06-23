@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de animes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/stilos.css' ) }}">
+</head>
+<body>
+
+  {% extends './plantilla.html'%}
+  {% block contenido %}
+    <div class="buscador">
+      <form action="/buscador" method="get">
+        <input type="text" name="busqueda" id="">
+        <input type="submit" value="envio">
+      </form>
+    </div>
+  
+    <div id="content" class="contenido">
+
+    </div>
+
+
+    <br>
+    <div class="contenido">
+    {% for clave in dicis %}
+      <div class="animes">
+      {% for valor in dicis[clave] %}
+        {% if valor == 'imagen'%}
+        <div id="playback">
+        <center><a href="/ba?anime={{clave}}"><img src="{{dicis[clave][valor]}}" alt=""></a></center>
+        {% endif %}
+        {% if valor == 'nombre' %}
+        <form action="/ba" method="get">
+          <center> 
+          <a href="/ba?anime={{clave}}">
+            <h3>{{dicis[clave][valor]}}</h3>
+          </a></center>
+        </form>
+        
+        </div>
+        {% endif %}
+      {% endfor %}
+      </div>
+    {% endfor %}
+   </div>
+
+
+
+
+
+   {% endblock %}
+
+
+    <!--import firebase-->
+    </body>
+</html>

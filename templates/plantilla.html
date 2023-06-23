@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/plantilla.css' ) }}">
+    <title>plantilla</title>
+</head>
+<body>
+    
+    <header>
+        <a href="/" class="logo">
+            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1e1f2c95-1c65-4a65-91ff-7b1d4301fffe/da00a5f-fdc8e652-6bb1-404b-b690-c36f165defdf.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzFlMWYyYzk1LTFjNjUtNGE2NS05MWZmLTdiMWQ0MzAxZmZmZVwvZGEwMGE1Zi1mZGM4ZTY1Mi02YmIxLTQwNGItYjY5MC1jMzZmMTY1ZGVmZGYucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.fKjldVhMLNLwaaelxxmAiz948QoBSA7HQP_Elwz0dBE" alt="">
+            <h2>name</h2>
+        </a>
+        <nav>
+            <a href="/list" class="nav link">inicio</a>
+            <a href="/profile?id={{token_id}}" class="nav link">perfil</a>
+            <a href="/logout" class="nav link">Cerrar sesion</a>
+        </nav>
+    </header>
+    {% block contenido %}
+
+    {% endblock %}
+</body>
+</html>

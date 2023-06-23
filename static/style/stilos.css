@@ -1,0 +1,18 @@
+.contenido{
+    display: flex;
+}
+
+.animes{
+    width: 120px;
+    height: 100%;
+    align-content: center;
+    
+}
+
+#playback img{
+    height: 120px;
+    width: 100px;
+    align-content: center;
+    
+}
+

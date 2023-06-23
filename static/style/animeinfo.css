@@ -1,0 +1,18 @@
+body{
+    display: block;
+}
+
+.contenido{
+    height: auto;
+    width: auto;
+    display: inline-flex;
+    vertical-align: text-top;
+    
+}
+
+.contenido img{
+    height: 250px;
+    width: 180px;
+    padding: 30px;
+
+}
